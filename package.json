@@ -1,0 +1,45 @@
+{
+  "name": "re-invented-console",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.95",
+    "@types/node": "^13.7.1",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": ">=4",
+    "lint-staged": "^10.0.7",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-web-extension": "^1.6.1",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "yarn clean && parcel watch manifest.json",
+    "build:test": "yarn clean && parcel build manifest.json",
+    "clean": "rm -rf dist",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint:fix": "yarn run lint --fix"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "yarn run lint --fix --max-warnings 0"
+  },
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "airbnb"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "webextensions": true
+    },
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    },
+    "rules": {
+        "semi": [
+            "warn",
+            "always"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "jsx-quotes": [
+            "warn",
+            "prefer-double"
+        ],
+        "comma-dangle": [
+            "warn",
+            "only-multiline"
+        ],
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                "extensions": [
+                    ".tsx"
+                ]
+            }
+        ],
+        "react/jsx-first-prop-new-line": [
+            "warn",
+            "multiline"
+        ],
+        "react/jsx-max-props-per-line": [
+            "warn",
+            {
+                "when": "always"
+            }
+        ],
+        "import/extensions": [
+            "warn",
+            {
+                ".tsx": "never",
+                ".ts": "never"
+            }
+        ]
+    }
+}
